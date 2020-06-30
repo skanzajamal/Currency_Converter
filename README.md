@@ -41,6 +41,11 @@ This is a simple currency converter desktop application using the currencylayer 
  - the application will start on port 8081 and url http://localhost:/8081/#! 
  
  - to generate the binary run maven clean build 
+
+
+ # MariaDb Database
+
+ - Switch branch to develop
  
  
 
