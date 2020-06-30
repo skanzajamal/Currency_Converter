@@ -1,4 +1,4 @@
-currencyApp.controller('CurrencyCtrl', ['$scope', '$filter','currencyConverterService', function($scope, $filter, currencyConverterService) {
+currencyApp.controller('CurrencyCtrl', ['$scope', '$filter', 'currencyConverterService', function ($scope, $filter, currencyConverterService) {
 
     var access_key = 'b3310f591dd1d532f86802058e8b5f62';
     $scope.historyList = [];
@@ -175,20 +175,19 @@ currencyApp.controller('CurrencyCtrl', ['$scope', '$filter','currencyConverterSe
         "EUR"
     ];
 
-    // $scope.result = null;
     $scope.FromCurrency = "EUR";
     $scope.ToCurrency = "CHF";
 
     $scope.convert = function (valid) {
 
-        if(valid){
-            currencyConverterService.CurrencyConversion(access_key).then( function(response) {
+        if (valid) {
+            currencyConverterService.CurrencyConversion(access_key).then(function (response) {
                 var from_currency = $scope.FromCurrency;
                 var to_currency = $scope.ToCurrency;
                 var rates = response.data.quotes;
                 try {
-                    var usd_equiv = $scope.amount / rates['USD'+from_currency+''];
-                    $scope.result = usd_equiv * rates['USD'+to_currency+''];
+                    var usd_equiv = $scope.amount / rates['USD' + from_currency + ''];
+                    $scope.result = usd_equiv * rates['USD' + to_currency + ''];
                     $scope.addHistory();
                 } catch (error) {
                     console.log("Error");
@@ -198,7 +197,7 @@ currencyApp.controller('CurrencyCtrl', ['$scope', '$filter','currencyConverterSe
         }
     };
 
-    $scope.setDefault = function(){
+    $scope.setDefault = function () {
         $scope.result = null;
     };
 
@@ -214,9 +213,9 @@ currencyApp.controller('CurrencyCtrl', ['$scope', '$filter','currencyConverterSe
         var historyData = {
             fromCurrency: $scope.FromCurrency,
             toCurrency: $scope.ToCurrency,
-            timestamp:  $filter('date')($scope.timestamp, 'MMMM dd, yyyy'),
-            fromValue : $scope.amount,
-            toValue :  $scope.result,
+            timestamp: $filter('date')($scope.timestamp, 'MMMM dd, yyyy'),
+            fromValue: $scope.amount,
+            toValue: $scope.result,
         };
         currencyConverterService.ConversionHistory(historyData).then(function (result) {
         })
