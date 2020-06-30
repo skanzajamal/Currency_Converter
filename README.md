@@ -4,7 +4,7 @@ This is a simple currency converter desktop application using the currencylayer 
 
 # Application Features:
 
-- Convert amonut from one currency to other
+- Convert amount from one currency to other
 - Maintain history for each conversion 
 - In memory Database
 - communication between Front-end and Back-end through REST-API
