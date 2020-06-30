@@ -1,0 +1,27 @@
+<div class="container-fluid" style="background: gainsboro" ng-controller="CurrencyCtrl" ng-init="getHistoryList()">
+    <div class="jumbotron" style="background: #3c3c3c;%">
+        <div class="container text-left">
+            <h2 style="color: white; font-family:verdana; font-weight: bold">pickar</h2>
+            <a href="#!/" style="color: white">< Go back</a>
+        </div>
+            <table class="table table-full m-b-0"
+                   fsm-big-data="data of data take 30"
+                   style="border-spacing: 0 15px; border: 0 !important;border-collapse: unset">
+                <thead>
+                <tr style="color: darkgray">
+                    <th style="text-align:center; border: 0 !important;">Date</th>
+                    <th style="text-align:center; border: 0 !important;">From</th>
+                    <th style="text-align:center; border: 0 !important;">To</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="history in historyList"
+                       style="background-color: white; margin-top: 10%;  padding-top: 10%;">
+                <tr style="margin-top: 5%;  border-radius: 25px;">
+                    <td style="text-align:center;">{{history.timestamp}}</td>
+                    <td style="text-align:center;">{{history.fromValue}} {{history.fromCurrency}}</td>
+                    <td style="text-align:center;">{{history.toValue }} {{history.toCurrency}}</td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+</div>
