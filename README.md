@@ -32,7 +32,7 @@ This is a simple currency converter desktop application using the currencylayer 
  # Build Instructions
  
  - Install IntellijIdea
- - Istall java
+ - Install java
  
  - import maven dependency (auto import)
  
