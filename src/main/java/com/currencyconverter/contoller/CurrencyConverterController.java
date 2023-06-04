@@ -1,7 +1,6 @@
 package com.currencyconverter.contoller;
 
 import com.currencyconverter.model.ConversionHistory;
-import com.currencyconverter.repository.CurrencyConverterRepository;
 import com.currencyconverter.service.CurrencyConverterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,9 +19,6 @@ public class CurrencyConverterController {
 
     @Autowired
     private CurrencyConverterService currencyConverterService;
-
-    @Autowired
-    private CurrencyConverterRepository currencyConverterRepository;
 
     public CurrencyConverterController(CurrencyConverterService currencyConverterService) {
         this.currencyConverterService = currencyConverterService;
@@ -40,9 +35,9 @@ public class CurrencyConverterController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ConversionHistory> getHistoryList() {
-        List<ConversionHistory> conversionHistory = new ArrayList<ConversionHistory>();
-        conversionHistory = currencyConverterRepository.findAll();
-        return conversionHistory;
+    public List<ConversionHistory> getConversionHistoryList() {
+        List<ConversionHistory> conversionHisties = currencyConverterService.getHistoryList();
+        return conversionHisties;
     }
+
 }

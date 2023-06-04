@@ -72,4 +72,5 @@ public class ConversionHistory {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+
 }
