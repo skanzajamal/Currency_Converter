@@ -1,6 +1,6 @@
 # Currency_Converter
 
-This is a simple currency converter desktop application using the currencylayer API for real time exchange rates.
+This is a simple currency converter desktop application using the currencylayer API for real time exchange rates, which converts currency rates from EUR to USD and from EUR to CHF (both ways).
 
 # Application Features:
 
@@ -17,12 +17,12 @@ This is a simple currency converter desktop application using the currencylayer 
 
 # Run instructions
 
-- Install java
+- Install jdk 8
 
 - download war file CurrencyConverter-1.0-SNAPSHOT.war from binary folder
 
 - Open terminal and run command 
-  java -jar CurrencyConverter-1.0-SNAPSHOT.war
+  $ java -jar CurrencyConverter-1.0-SNAPSHOT.war
   
   the application will start on url: http://localhost:8081/
   
@@ -31,8 +31,8 @@ This is a simple currency converter desktop application using the currencylayer 
  
  # Build Instructions
  
- - Install IntellijIdea
- - Install java
+ - Install Intellij Idea
+ - Install jdk 8
  
  - import maven dependency (auto import)
  
