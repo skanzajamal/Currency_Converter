@@ -17,7 +17,7 @@ This is a simple currency converter desktop application using the currencylayer 
 
 # Run instructions
 
-- Install jdk 8
+- Install jdk 1.8
 
 - download war file CurrencyConverter-1.0-SNAPSHOT.war from binary folder
 
@@ -32,7 +32,7 @@ This is a simple currency converter desktop application using the currencylayer 
  # Build Instructions
  
  - Install Intellij Idea
- - Install jdk 8
+ - Install jdk 1.8
  
  - import maven dependency (auto import)
  
